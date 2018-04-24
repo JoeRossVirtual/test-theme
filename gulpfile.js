@@ -15,7 +15,7 @@ gulp.task('clear-build', function () {
 
 gulp.task('concat-css', function () {
     gulp.src('./src/css/**/*.css')
-        .pipe(concatCss("styles.css"))
+        .pipe(concatCss("style.css"))
         .pipe(gulp.dest('build'))
 });
 
