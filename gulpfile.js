@@ -19,19 +19,26 @@ gulp.task('concat-css', function () {
         .pipe(gulp.dest('build'))
 });
 
-gulp.task('commit-changes', function () {
+gulp.task('check-message', function () {
     if (!argv.m) {
         var err = new PluginError('test', {
             message: '\n\nPLEASE INCLUDE COMMIT MESSAGE\nExample: gulp -m "commit message"'
         });
         throw (err);
     }
-    return gulp.src('./*')
-        .pipe(git.add())
-        .pipe(git.commit(argv.m));
 });
 
-gulp.task('push-changes', function () {
+gulp.task('git-add', function () {
+    return gulp.src('./*')
+    .pipe(git.add({quiet: true}));
+});
+
+gulp.task('git-commit', function () {
+    return gulp.src('./*')
+    .pipe(git.commit(argv.m));
+});
+
+gulp.task('git-push', function () {
     git.push('origin', 'master', function (err) {
         if (err){
             console.log('err')
@@ -45,8 +52,10 @@ gulp.task('default', function (callback) {
     runSequence(
         'concat-css',
         'clear-build',
-        'commit-changes',
-        // 'push-changes',
+        'check-message',
+        'git-add',
+        // 'git-commit',
+        // 'git-push',
         function (error) {
             if (error) {
                 console.log(error.message);
