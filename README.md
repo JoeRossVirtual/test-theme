@@ -3,10 +3,11 @@
 ## Deployment process
 
 1. Clone git repo
-2. run `npm install` in project folder
-3. Make changes to the syles in the src folder (currently only has support for css files located in the src/css folder)
-4. Open Bash terminal (git bash) and run `bash run.text -m "<Your_commit_message>"` in the project folder (currently only have a bash script, could write a batch file later for command prompt support)
-5. In a couple of seconds check the changes on the [Wordpress install](http://virtualtest.wpengine.com/?page_id=4)
+2. run `npm install --global gulp-cli` to install the Gulp CLI
+3. run `npm install` in project folder
+4. Make changes to the syles in the src folder (currently only has support for css files located in the src/css folder)
+5. Open Bash terminal (git bash) and run `bash run.text s"<Your_commit_message>"` in the project folder (currently only have a bash script, could write a batch file later for command prompt support)
+6. In a couple of seconds check the changes on the [Wordpress install](http://virtualtest.wpengine.com/?page_id=4)
 
 ## How it works
 
