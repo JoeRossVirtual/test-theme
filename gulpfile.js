@@ -26,7 +26,7 @@ gulp.task('build-php', function () {
     return gulp.src([
         './src/php/**/*'
     ],  {base: './src/php/'}) 
-    .pipe(gulp.dest('./build/php/'));
+    .pipe(gulp.dest('./build/'));
 });
 
 gulp.task('build-js', function() {
