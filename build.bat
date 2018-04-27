@@ -1,11 +1,11 @@
 :TOP
 IF "%~1"=="" (
-   call :ERROR
+   call :NoMessage
 ) ELSE (
     call :BUILD %1
 )
 
-:ERROR
+:NoMessage
 ECHO ERROR:   YOU MUST SUPPLY A GIT COMMIT MESSAGE
 EXIT /B 0
 
