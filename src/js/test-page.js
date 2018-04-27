@@ -3,6 +3,7 @@ console.log("I ran");
 let first = jQuery(".first");
 var color = ["red", "orange", "yellow", "green", "blue", "purple"];
 let i = 0;
+first.html("This is a staging test.")
 setInterval(function(){
     //do what you need here
     first.css("background-color", color[i]);
