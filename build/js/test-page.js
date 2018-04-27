@@ -1,1 +1,1 @@
-jQuery("img").hide(),console.log("I ran");let first=jQuery(".first");var color=["red","orange","yellow","green","blue","purple"];let i=0;for(;;)setTimeout(function(){i=(i+1)%color.length,console.log(i),first.css("background-color: "+color[i]),console.log(first)},1e3);
+jQuery("img").hide(),console.log("I ran");let first=jQuery(".first");var color=["red","orange","yellow","green","blue","purple"];let i=0;setInterval(function(){i=(i+1)%color.length,console.log(i),first.css("background-color: "+color[i]),console.log(first)},1e3);
