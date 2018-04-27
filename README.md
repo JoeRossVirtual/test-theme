@@ -16,6 +16,13 @@
     * Run `build "<Your_commit_message>"`
 3. In a couple of seconds check the changes on the [Wordpress install](http://virtualtest.wpengine.com/?page_id=4)
 
+## Staging environment
+
+* There is now support for staging environments.  The staging install for this project is located [here](http://virteststaging.wpengine.com/)
+* When beginning work on a staging install you must use the staging branch. If you don't already have a project going on in the staging env run `updateStaging` in command prompt or `bash updateStaging.sh` in a bash terminal
+* Follow the same process to build as on the live site.
+* When you are happy with your changes on the dev env you can push the changes to the live site by running `merge` in command prompt or `bash merge.sh` in a bash terminal
+
 ## How it works
 
 * build scripts file run the gulp command which runs the gulpfile.js file.
