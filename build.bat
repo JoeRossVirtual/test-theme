@@ -15,5 +15,5 @@ EXIT /B 0
 call gulp
 call git add . -A
 call git commit -m "%~1"
-call git push origin master
+call git push origin HEAD
 EXIT /B 0
