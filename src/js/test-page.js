@@ -5,8 +5,6 @@ var color = ["red", "orange", "yellow", "green", "blue", "purple"];
 let i = 0;
 setInterval(function(){
     //do what you need here
+    first.css("background-color", color[i]);
     i = (i+1)%color.length;
-    console.log(i);
-    first.css("background-color: " + color[i]);
-    console.log(first);
 }, 1000);
