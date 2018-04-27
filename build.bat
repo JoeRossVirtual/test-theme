@@ -1,6 +1,6 @@
 :TOP
 IF "%~1"=="" (
-   call :NoMessage
+    call :NoMessage
 ) ELSE (
     call :BUILD %1
 )
@@ -14,4 +14,6 @@ call gulp
 call git add . -A
 call git commit -m "%~1"
 call git push origin master
+EXIT /B 0
+
 EXIT /B 0
