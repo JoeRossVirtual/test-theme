@@ -19,7 +19,7 @@
 ## How it works
 
 * build scripts file run the gulp command which runs the gulpfile.js file.
-* the gulpfile has the build process which currently just concatinates the css files and creates the build css file.  This can be extended to minify files, add support for js or php files and other things
+* the gulpfile has the build process which currently builds the theme by copying the php and js files, and concatinating the css files.
 * The build scripts then finish by using the commit message you supplied to create a git commit and pushing the new commit to github
 * This repo is set up with a webhook so when changes are pushed to the repo it sends a notification to [DeployHq](https://www.deployhq.com/)
 * [DeployHq](https://www.deployhq.com/) is an online service which sends files from your git repo to another server using sftp whenever it recieves the webhook notification (I currently am using a demo version which is free for the week, the pricing can be found [here](https://www.deployhq.com/pricing))
