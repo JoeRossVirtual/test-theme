@@ -18,7 +18,14 @@ gulp.task('build-css', function () {
         .pipe(concatCss("style.css"))
         // Minifies CSS
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('build'));
+});
+
+gulp.task('build-php', function () {
+    return gulp.src([
+        './src/php/**/*'
+    ],  {base: './src/php/'}) 
+    .pipe(gulp.dest('./build/php/'));
 });
 
 // Runs tasks
@@ -26,6 +33,7 @@ gulp.task('default', function (callback) {
     runSequence(
         'clear-build',
         'build-css',
+        'build-php',
         function (error) {
             if (error) {
                 console.log(error.message);
