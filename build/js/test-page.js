@@ -1,0 +1,1 @@
+jQuery("img").hide();let first=jQuery(".first");var color=["red","orange","yellow","green","blue","purple"];let i=0;setTimeout(function(){i=(i+1)%color.length,first.css("background-color: "+color[i])},1e3);

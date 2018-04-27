@@ -4,6 +4,7 @@ var concatCss = require('gulp-concat-css');
 var del = require('del');
 var git = require('gulp-git');
 var cleanCSS = require('gulp-clean-css');
+var minify = require('gulp-minify');
 
 // Empties the build folder
 gulp.task('clear-build', function () {
@@ -28,11 +29,23 @@ gulp.task('build-php', function () {
     .pipe(gulp.dest('./build/php/'));
 });
 
+gulp.task('build-js', function() {
+    gulp.src('src/js/**/*.js')
+      .pipe(minify({
+          ext:{
+              min:'.js'
+          },
+          noSource: true,
+      }))
+      .pipe(gulp.dest('build/js'))
+  });
+
 // Runs tasks
 gulp.task('default', function (callback) {
     runSequence(
         'clear-build',
         'build-css',
+        'build-js',
         'build-php',
         function (error) {
             if (error) {

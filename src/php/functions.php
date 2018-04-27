@@ -584,3 +584,11 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+/* Allow JS Files */
+function add_scriptfilter( $string ) {
+	global $allowedtags;
+	$allowedtags['script'] = array( 'src' => array () );
+	return $string;
+	}
+	add_filter( 'pre_kses', 'add_scriptfilter' );
