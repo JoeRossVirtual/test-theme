@@ -1,3 +1,3 @@
 git checkout master
-git merge staging --no-ff
+git merge --no-ff staging
 git push origin HEAD
