@@ -1,1 +1,8 @@
-.first{background-color:green}.second{background-color:red;color:#fff;width:50%}
+.first {
+  background-color: green;
+}
+.second {
+  background-color: blue;
+  color: white;
+  width: 50%;
+}

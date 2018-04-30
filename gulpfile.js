@@ -18,7 +18,7 @@ gulp.task('build-css', function () {
         // Concatinates CSS files
         .pipe(concatCss("style.css"))
         // Minifies CSS
-        .pipe(cleanCSS({compatibility: 'ie8'}))
+        // .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('build'));
 });
 
